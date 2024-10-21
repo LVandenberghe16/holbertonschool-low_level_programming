@@ -23,7 +23,7 @@ int my_strlen(char const *str)
 */
 int main(void)
 {
-	char *string = "_putchar";
+	char *string = "_putchar\n";
 
 	write(1, string, my_strlen(string));
 	return (0);
