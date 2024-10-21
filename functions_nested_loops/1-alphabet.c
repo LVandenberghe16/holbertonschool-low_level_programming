@@ -15,7 +15,7 @@ int _putchar(char c)
 /**
  * print_alphabet - prints the alphabet in lowercase, followed by a new line.
  */
-void print_alphabet()
+void print_alphabet(void)
 {
     char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
     int i;
@@ -25,15 +25,4 @@ void print_alphabet()
         _putchar(alphabet[i]);
     }
     _putchar('\n');
-}
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    print_alphabet();
-    return (0);
 }
