@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -z "$CFILE" ]; then
+    echo "Error: CFILE environment variable is not set."
+    exit 1
+fi
+
+BASENAME=$(basename "$CFILE" .c)
+
+OUTPUT_FILE="$BASENAME.s"
+
+gcc -S -masm=intel "$CFILE" -o "$OUTPUT_FILE"
+
+if [ $? -eq 0 ]; then
+    echo "Assembly code generated in: $OUTPUT_FILE"
+else
+    echo "Error: Failed to generate assembly code."
+    exit 1
+fi
