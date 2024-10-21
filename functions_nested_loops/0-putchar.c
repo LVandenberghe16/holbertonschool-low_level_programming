@@ -2,7 +2,7 @@
 
 /**
 * my_strlen - my_strlen function
-* str - the string you want to get the size of
+* @str - the string you want to get the size of
 *
 * Return: return lenght of a string
 */
