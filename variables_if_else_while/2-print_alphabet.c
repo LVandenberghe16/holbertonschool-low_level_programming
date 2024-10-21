@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	char *alphabet = "abcdefghijklmopqrstuvwxyz\n";
+	char *alphabet = "abcdefghijklmnopqrstuvwxyz\n";
 	int i = 0;
 
 	while (i != 26)
