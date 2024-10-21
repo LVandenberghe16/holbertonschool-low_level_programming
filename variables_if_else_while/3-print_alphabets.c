@@ -11,9 +11,9 @@ int main(void)
 	int i = 0;
 
 	while (i != 53)
-	}
+	{
 		putchar(alphabet[i]);
-		 i++;
+		i++;
 	}
 	return (0);
 }
