@@ -26,10 +26,8 @@ int my_strlen(char const *str)
 *
 * Return: return success
 */
-int main(void)
+int _putchar(char *string)
 {
-	char *string = "_putchar\n";
-
 	write(1, string, my_strlen(string));
 	return (0);
 }
