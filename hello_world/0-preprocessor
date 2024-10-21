@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "$CFILE" ]; then
+    echo "CFILE is not set. Please export CFILE with the path to the C file."
+    exit 1
+fi
+
+gcc -E "$CFILE" -o c
