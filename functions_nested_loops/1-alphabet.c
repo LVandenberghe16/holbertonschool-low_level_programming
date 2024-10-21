@@ -1,46 +1,30 @@
 #include "main.h"
 
 /**
-* my_strlen - my_strlen function
-* @str: the string you want to get the size of
+* _putchar - writes a single character to stdout
+* @c: the character to print
 *
-* Description: this function return the size of a string
-*
-* Return: return lenght of a string
+* Return: On success 1.
+* On error, -1 is returned, and errno is set appropriately.
 */
-int my_strlen(char const *str)
+int _putchar(char c)
 {
-	int i = 0;
-	int len = 0;
-
-	while (str[i] != '\0')
-	{
-		len += 1;
-		i++;
-	}
-	return (len);
+    return (write(1, &c, 1));
 }
 
 /**
-* _putchar - _putchar function
-*
-* @string: the string you want to print
-*
-* Return: return success
-*/
-int _putchar(char *string)
-{
-	write(1, string, my_strlen(string));
-	return (0);
-}
-
-/**
- * print_alphabet - check the code
- *
+ * print_alphabet - prints the alphabet in lowercase, followed by a new line.
  */
 void print_alphabet(void)
 {
-    _putchar("abcdefghijklmnopqrstuvwxyz\n");
+    char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+    int i;
+
+    for (i = 0; i < 26; i++)
+    {
+        _putchar(alphabet[i]);
+    }
+    _putchar('\n');
 }
 
 /**
