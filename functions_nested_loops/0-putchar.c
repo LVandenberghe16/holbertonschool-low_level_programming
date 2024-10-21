@@ -7,15 +7,15 @@
 */
 int my_strlen(char const *str)
 {
-    int i = 0;
-    int len = 0;
+	int i = 0;
+	int len = 0;
 
-    while (str[i] != '\0')
+	while (str[i] != '\0')
 	{
-        len += 1;
-        i++;
-    }
-    return (len);
+		len += 1;
+		i++;
+	}
+	return (len);
 }
 
 /**
