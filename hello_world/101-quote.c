@@ -1,5 +1,10 @@
 #include <unistd.h>
 
+/**
+* main - main function of the program
+*
+* Return: 1 for error
+*/
 int main(void)
 {
 const char *quote =
