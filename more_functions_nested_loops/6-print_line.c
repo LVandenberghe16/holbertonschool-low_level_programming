@@ -17,6 +17,6 @@ void print_line(int n)
 	{
 		write(1, "_", 1);
 	}
-	newline:
-		write(1, "\n", 1);
+newline:
+	write(1, "\n", 1);
 }
