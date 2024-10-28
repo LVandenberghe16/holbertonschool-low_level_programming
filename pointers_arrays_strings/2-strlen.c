@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
-* swap_int - oui
+* _strlen - oui
 * @s: num
 * Return: restult
 */
@@ -14,5 +14,5 @@ int _strlen(char *s)
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
