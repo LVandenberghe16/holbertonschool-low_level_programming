@@ -7,33 +7,41 @@ int _atoi(char *s)
     int i = 0;
     int found_digit = 0;
 
-    while (s[i] == ' ')
+    while (s[i] != '\0')
     {
-        i++;
-    }
-
-    while (s[i] == '-' || s[i] == '+')
-    {
-        if (s[i] == '-')
-            sign *= -1;
-        i++;
-    }
-
-    while (s[i] >= '0' && s[i] <= '9')
-    {
-        found_digit = 1;
-        if (num > (2147483647 / 10) || (num == (2147483647 / 10) && (s[i] - '0') > 7))
+        if (s[i] == ' ')
         {
-            return (sign == 1) ? 2147483647 : -2147483648;
+            i++;
+            continue;
         }
-        num = num * 10 + (s[i] - '0');
+
+        if (s[i] == '-' || s[i] == '+')
+        {
+            if (found_digit)
+                break;
+            if (s[i] == '-')
+                sign *= -1;
+        }
+
+        if (s[i] >= '0' && s[i] <= '9')
+        {
+            found_digit = 1;
+            num = num * 10 + (s[i] - '0');
+
+            if (num > 2147483647)
+            {
+                return (sign == 1) ? 2147483647 : -2147483648;
+            }
+        }
+        else if (found_digit)
+        {
+            break;
+        }
         i++;
     }
 
     if (!found_digit)
-    {
         return 0;
-    }
 
-    return (sign == -1) ? -num : num;
+    return sign * num;
 }
