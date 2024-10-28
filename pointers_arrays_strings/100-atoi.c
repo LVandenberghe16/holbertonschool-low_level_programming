@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * _atoi - oui
+ * @s: oui
+ * Return: oui
+ */
 int _atoi(char *s)
 {
     int sign = 1;
@@ -14,7 +19,6 @@ int _atoi(char *s)
             i++;
             continue;
         }
-
         if (s[i] == '-' || s[i] == '+')
         {
             if (found_digit)
@@ -22,26 +26,18 @@ int _atoi(char *s)
             if (s[i] == '-')
                 sign *= -1;
         }
-
         if (s[i] >= '0' && s[i] <= '9')
         {
             found_digit = 1;
             num = num * 10 + (s[i] - '0');
-
             if (num > 2147483647)
-            {
                 return (sign == 1) ? 2147483647 : -2147483648;
-            }
         }
         else if (found_digit)
-        {
             break;
-        }
         i++;
     }
-
     if (!found_digit)
-        return 0;
-
-    return sign * num;
+        return (0);
+    return (sign * num);
 }
