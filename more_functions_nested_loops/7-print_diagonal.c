@@ -21,16 +21,3 @@ void print_diagonal(int n)
 		write(1, "\\\n", 2);
 	}
 }
-
-/**
-* main - oui
-* Return: restult
-*/
-int main(void)
-{
-    print_diagonal(0);
-    print_diagonal(2);
-    print_diagonal(10);
-    print_diagonal(-4);
-    return (0);
-}
