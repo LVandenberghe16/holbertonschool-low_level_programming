@@ -7,5 +7,5 @@
 */
 int _isupper(char c)
 {
-return !(c & 32);
+	return (c >= 'A' && c <= 'Z');
 }
