@@ -9,10 +9,12 @@ void print_line(int n)
 {
 	int i;
 
-	if (n <= 0) {
+	if (n <= 0)
+	{
 		goto newline;
 	}
-	for (i = 0; i < n; i++) {
+	for (i = 0; i < n; i++)
+	{
 		write(1, "_", 1);
 	}
 	newline:
