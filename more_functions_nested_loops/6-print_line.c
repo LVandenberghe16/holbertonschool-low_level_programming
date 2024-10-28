@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
-* mul - oui
+* print_line - oui
 * @n: num
 * Return: restult
 */
