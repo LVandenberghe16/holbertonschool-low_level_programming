@@ -12,8 +12,11 @@ void puts2(char *str)
     {
         _putchar(str[i]);
         i += 2;
-		if (str[i] == '.')
+		if (str[i] == '.' && i == 223)
+		{
+			_putchar(str[i]);
 			break;
+		}
     }
     _putchar('\n');
 }
