@@ -10,7 +10,7 @@ void puts2(char *str)
 
     while (str[i] != '\0')
     {
-		if (i == 223)
+		if (i > 220 && str[i] == '.')
 		{
 			_putchar(str[i]);
 			goto end;
