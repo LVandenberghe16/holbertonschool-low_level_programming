@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
-* reset_to_98 - oui
+* swap_int - oui
 * @a: num
 * @b: num
 * Return: restult
