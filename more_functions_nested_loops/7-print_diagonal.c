@@ -1,4 +1,5 @@
 #include <unistd.h>
+
 /**
 * print_diagonal - oui
 * @n: num
