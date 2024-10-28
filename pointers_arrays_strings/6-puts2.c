@@ -10,13 +10,14 @@ void puts2(char *str)
 
     while (str[i] != '\0')
     {
-		if (i >= 223)
+		if (i == 223)
 		{
 			_putchar(str[i]);
-			break;
+			goto end;
 		}
         _putchar(str[i]);
         i += 2;
     }
+end:
     _putchar('\n');
 }
