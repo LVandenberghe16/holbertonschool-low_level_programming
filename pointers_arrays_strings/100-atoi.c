@@ -36,8 +36,10 @@ int my_getnbr(char const *str)
     int nb = 0;
     char sign;
     int minus = 0;
+    int i;
 
-    for (int i = 0 ; str[i] != '\0' ; i += 1) {
+
+    for (i = 0 ; str[i] != '\0' ; i += 1) {
         sign = is_sign(str[i]);
         if (my_isnum(str[i]) == 0 && (sign == 0 || nb != 0))
             return is_odd(minus) == 1 ? -nb : nb;
