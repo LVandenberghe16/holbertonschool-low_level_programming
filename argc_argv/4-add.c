@@ -10,11 +10,16 @@
  */
 int main(int ac, char **av)
 {
-	if (ac != 3)
+	int i;
+	int sum = 0;
+
+	if (ac == 1)
 	{
-		printf("Error\n");
-		return (1);
+		printf("0");
+		return (0);
 	}
-	printf("%i\n", atoi(av[1]) * atoi(av[2]));
+	for (i = 0; i != ac; i++)
+		sum = sum + atoi(av[i]);
+	printf("%i\n", sum);
 	return (0);
 }
