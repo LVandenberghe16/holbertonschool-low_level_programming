@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _strchr - fills the first n bytes of the memory area
@@ -10,6 +11,13 @@
  */
 char *_strchr(char *s, char c)
 {
-	for(; *s != c; s++);
-	return (s);
+	while (*s)
+	{
+		if (*s == c)
+			return s;
+		s++;
+	}
+	if (c == '\0')
+		return (s);
+	return (NULL);
 }
