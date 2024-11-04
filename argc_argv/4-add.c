@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <limits.h>
 
 /**
  * is_digit - prints the program's name followed by a new line
@@ -34,21 +35,28 @@ int main(int ac, char **av)
 {
 	int i;
 	int sum = 0;
+	int num;
 
 	if (ac == 1)
 	{
-		printf("0");
+		printf("0\n");
 		return (0);
 	}
-	for (i = 1; i != ac; i++)
+	for (i = 1; i < ac; i++)
 	{
 		if (is_digit(av[i]) == 0)
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum = sum + atoi(av[i]);
+		num = atoi(av[i]);
+		if (sum > INT_MAX - num)
+		{
+			printf("%d\n", INT_MAX);
+			return (0);
+		}
+		sum += num;
 	}
-	printf("%i\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
