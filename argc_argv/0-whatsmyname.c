@@ -9,6 +9,9 @@
  */
 int main(int ac, char **av)
 {
-	printf("%s\n", av[0]);
+	if (ac == 0)
+		printf("%s\n", av[0]);
+	else
+		printf("%s\n", av[0]);
 	return (0);
 }
