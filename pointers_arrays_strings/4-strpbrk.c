@@ -10,14 +10,15 @@
  * or NULL if no such byte is found
  */
 char *_strpbrk(char *s, char *accept) {
+	char *a;
+
 	while (*s)
 	{
-		for (char *a = accept; *a; a++)
+		a = accept;
+		for (; *a; a++)
 		{
 			if (*s == *a)
-			{
 				return s;
-			}
 		}
 		s++;
 	}
