@@ -2,31 +2,24 @@
 #include <stdio.h>
 
 /**
- * _strpbrk - fills the first n bytes of the memory area
- *           pointed to by s with the constant byte b.
- * @s: pointer to the memory area to fill
- * @accept: constant byte to fill memory with
+ * _strpbrk - searches a string for any of a set of bytes
+ * @s: the string to search
+ * @accept: the string containing the bytes to look for
  *
- * Return: pointer to the memory area s
+ * Return: a pointer to the byte in s that matches one of the bytes in accept,
+ * or NULL if no such byte is found
  */
-char *_strpbrk(char *s, char *accept)
-{
-    int j, s_a;
-	int found = 0;
-	int end = 0;
-
-	for (s_a = 0; accept[s_a] != '\0'; s_a++);
-	for (; *s != '\0'; s++)
+char *_strpbrk(char *s, char *accept) {
+	while (*s)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (char *a = accept; *a; a++)
 		{
-			if (accept[j] == *s)
-				found = 1;
-			if (found == 1 && accept[j] != *s && j == s_a - 1)
-				end = 1;
+			if (*s == *a)
+			{
+				return s;
+			}
 		}
-		if (end == 1)
-			return (s);
+		s++;
 	}
-    return (s);
+	return NULL;
 }
