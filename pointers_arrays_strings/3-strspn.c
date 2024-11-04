@@ -2,36 +2,31 @@
 #include <stdio.h>
 
 /**
- * _strchr - fills the first n bytes of the memory area
- *           pointed to by s with the constant byte b.
- * @s: pointer to the memory area to fill
- * @accept: constant byte to fill memory with
+ * _strspn - gets the length of a prefix substring
+ * @s: the string to search
+ * @accept: the string containing the bytes to match
  *
- * Return: pointer to the memory area s
+ * Return: the number of bytes in the initial segment of s
+ * which consist only of bytes from accept
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, s_a;
-	int size = 0;
-	int found = 0;
-	int end = 0;
+	unsigned int count = 0;
+	char *a;
 
-	for (s_a = 0; accept[s_a] != '\0'; s_a++);
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (a = accept; *a; a++)
 		{
-			if (accept[j] == s[i])
+			if (*s == *a)
 			{
-				found = 1;
-				size++;
+				count++;
 				break;
 			}
-			if (found == 1 && accept[j] != s[i] && j == s_a - 1)
-				end = 1;
 		}
-		if (end == 1)
-			return (size);
+		if (!*a)
+			break;
+		s++;
 	}
-	return (size);
+	return (count);
 }
