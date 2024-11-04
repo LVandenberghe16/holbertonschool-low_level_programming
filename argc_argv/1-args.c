@@ -9,6 +9,6 @@
  */
 int main(int ac,  __attribute__((unused)) char **av)
 {
-	printf("%i\n", ac);
+	printf("%i\n", ac - 1);
 	return (0);
 }
