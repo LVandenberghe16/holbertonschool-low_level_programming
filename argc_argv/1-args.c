@@ -7,8 +7,8 @@
  *
  * Return: Always 0 (Success)
  */
-int main(__attribute__((unused)) int ac, char **av)
+int main(int ac,  __attribute__((unused)) char **av)
 {
-	printf("%s\n", av[0]);
+	printf("%i\n", ac);
 	return (0);
 }
