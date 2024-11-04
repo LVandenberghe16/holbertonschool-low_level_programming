@@ -18,9 +18,9 @@ char *_strpbrk(char *s, char *accept) {
 		for (; *a; a++)
 		{
 			if (*s == *a)
-				return s;
+				return (s);
 		}
 		s++;
 	}
-	return NULL;
+	return (NULL);
 }
