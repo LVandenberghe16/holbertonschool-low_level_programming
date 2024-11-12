@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <unistd.h>
+#include <stdio.h>
 
 /**
  * struct dog - a structure representing a point in 2D space
@@ -18,5 +19,6 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 char *_strdup(char *str);
+void print_dog(struct dog *d);
 
 #endif /* MAIN_H */
