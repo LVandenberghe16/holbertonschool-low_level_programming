@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <string.h>
 
 /**
  * new_dog - Allocates memory using malloc and checks for success.
@@ -16,17 +17,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);
-	if (name != NULL)
-		dog->name = _strdup(name);
-	else
+	dog->name = strdup(name);
+	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
-	if (owner != NULL)
-		dog->owner = _strdup(owner);
-	else
+	dog->owner = strdup(owner);
+	if (dog->owner == NULL)
 	{
+		free(dog->name);
 		free(dog);
 		return (NULL);
 	}
