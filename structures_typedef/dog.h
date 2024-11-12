@@ -3,8 +3,9 @@
 
 /**
  * dog - a structure representing a point in 2D space
- * @x: the x coordinate of the point
- * @y: the y coordinate of the point
+ * @name: the x coordinate of the point
+ * @age: the y coordinate of the point
+ * @owner: the y coordinate of the point
  */
 struct dog
 {
