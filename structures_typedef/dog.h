@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <unistd.h>
+
 /**
  * struct dog - a structure representing a point in 2D space
  * @name: the x coordinate of the point
