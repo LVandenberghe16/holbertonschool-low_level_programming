@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdio.h>
 
 /**
  * init_dog - Allocates memory using malloc and checks for success.
@@ -13,7 +12,7 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = name;
+	d->name = _strdup(name);
 	d->age = age;
-	d->owner = owner;
+	d->owner = _strdup(owner);
 }
