@@ -1,45 +1,44 @@
-#include "variadic_functions.h"
-#include <string.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
- * print_all - returns the sum of all its parameters
- *  @: oui
- *  @format: the number of parameters
- *
- * Return: the sum of all parameters, or 0 if n == 0
+ * print_all - prints anything based on a format string
+ * @format: list of types of arguments passed to the function
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	char *str;
 	int i = 0;
+	char *str, *sep = "";
 
 	va_start(args, format);
+
 	while (format && format[i])
 	{
 		switch (format[i])
 		{
-		case 's':
-			str = va_arg(args, char *);
-			if (str == NULL)
-				printf("(nil),");
-			else
-				printf("%s,", str);
-			break;
-		case 'f':
-			printf("%f,", va_arg(args, double));
-			break;
 		case 'c':
-			printf("%c,", va_arg(args, int));
+			printf("%s%c", sep, va_arg(args, int));
 			break;
 		case 'i':
-			printf("%i,", va_arg(args, int));
+			printf("%s%d", sep, va_arg(args, int));
+			break;
+		case 'f':
+			printf("%s%f", sep, va_arg(args, double));
+			break;
+		case 's':
+			str = va_arg(args, char *);
+			if (!str)
+				str = "(nil)";
+			printf("%s%s", sep, str);
 			break;
 		default:
-			break;
+			i++;
+			continue;
 		}
+		sep = ", ";
 		i++;
 	}
-	printf("\b \n");
+	va_end(args);
+	printf("\n");
 }
