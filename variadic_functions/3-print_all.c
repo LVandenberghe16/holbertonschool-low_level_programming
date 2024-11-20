@@ -13,7 +13,6 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	char *str;
-	unsigned int len = strlen(format);
 	int i = 0;
 
 	va_start(args, format);
